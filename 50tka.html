@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50tka Asi w Warszawie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Style globalne --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f4f7f6; /* Jasne tło */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Nagłówek --- */
+        header {
+            background-color: #004a99; /* Akcent - ciemny niebieski */
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        /* --- Główny kontener na plan --- */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr; /* Domyślnie jedna kolumna (mobile) */
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* --- Kolumna dnia --- */
+        .day-column {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden; /* Aby zaokrąglenie działało na nagłówek */
+        }
+        
+        .day-column h2 {
+            background-color: #e6f0ff; /* Akcent - bardzo jasny niebieski */
+            color: #004a99;
+            font-size: 1.8rem;
+            font-weight: 700;
+            padding: 20px;
+            border-bottom: 2px solid #d1e3ff;
+        }
+
+        /* --- Pojedyncza karta aktywności --- */
+        .card {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+        
+        .day-column .card:last-child {
+            border-bottom: none;
+        }
+
+        .card-content {
+            padding-left: 70px; /* Miejsce na ikonę czasu */
+        }
+        
+        .card .time {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background-color: #004a99;
+            color: white;
+            font-weight: 700;
+            padding: 6px 8px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            text-align: center;
+            min-width: 50px;
+        }
+        
+        .card h3 {
+            font-size: 1.2rem;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        
+        .card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* --- Przycisk mapy --- */
+        .card a.map-link {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #007bff; /* Akcent - jasny niebieski */
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+        
+        .card a.map-link:hover {
+            background-color: #0056b3; /* Ciemniejszy niebieski przy najechaniu */
+        }
+
+        /* === RESPONSYWNOŚĆ (Desktop) === */
+        @media (min-width: 769px) {
+            .container {
+                /* 3 kolumny na desktopie */
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            header h1 {
+                font-size: 3rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🎂 50tka Asi w Warszawie 🥂</h1>
+    </header>
+
+    <main class="container">
+
+        <div class="day-column">
+            <h2>Dzień 1: Piątek</h2>
+
+            <div class="card">
+                <div class="time">17:00</div>
+                <div class="card-content">
+                    <h3>Wyjazd z Poznania</h3>
+                    <p>Start wielkiej przygody! Kierunek: Warszawa! 🚗</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="time">20:30</div>
+                <div class="card-content">
+                    <h3>Check-in w hotelu Tiffi</h3>
+                    <p>Butikowy, stylowy hotel tuż przy historycznym centrum; pradawna kamienica, klimat retro, obsługa czuje, co to znaczy gościnność.</p>
+                    <a href="https://maps.google.com/?cid=9811046792990532569&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="map-link">Zobacz na mapie (Krakowskie Przedmieście 7)</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="time">21:00</div>
+                <div class="card-content">
+                    <h3>Kolacja: Warszawski Sen</h3>
+                    <p>Hala Koszyki. Nowoczesna polska kuchnia – reinterpretacja klasyki w modnym wnętrzu. Idealnie na start weekendu z rozmową przy winie.</p>
+                    <a href="https://maps.google.com/?cid=17007533510106922477&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="map-link">Zobacz na mapie (Hala Koszyki, Koszykowa 63)</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="time">22:30</div>
+                <div class="card-content">
+                    <h3>Drink w Hali Koszyki</h3>
+                    <p>Spacer po Hali, szybki drink w Koszyki Barze lub na tarasie – miejsce multikulturowe i stylowe.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-column">
+            <h2>Dzień 2: Sobota</h2>
+
+            <div class="card">
+                <div class="time">09:45</div>
+                <div class="card-content">
+                    <h3>Śniadanie</h3>
+                    <p>Hotelowe śniadanie w stylowych wnętrzach Tiffi. Zbieramy siły przed intensywnym dniem!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="time">11:30</div>
+                <div class="card-content">
+                    <h3>Fabryka Czekolady Wedla</h3>
+                    <p>Podróż do królestwa czekolady! Zwiedzanie najsłynniejszej polskiej fabryki słodyczy, poznawanie historii marki i degustacja!</p>
+                    <a href="https://maps.google.com/?cid=8447667779912055872&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="map-link">Zobacz na mapie (aleja Wedla 5)</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="time">13:15</div>
+                <div class="card-content">
+                    <h3>Powrót do hotelu</h3>
+                    <p>Szybki refresh i chwila odpoczynku przed kolejnymi atrakcjami.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="time">14:15</div>
+                <div class="card-content">
+                    <h3>Lekki lunch: Bułkę przez Bibułkę</h3>
+                    <p>Kultowe warszawskie bistro. Świetne pieczywo, świeże sałatki i pyszna kawa na doładowanie baterii przed teatrem.</p>
+                    <a href="https://maps.google.com/?cid=16240858052739445032&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="map-link">Zobacz na mapie (Zgoda 3/5)</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="time">15:00</div>
+                <div class="card-content">
+                    <h3>Spektakl: "Sinatra"</h3>
+                    <p>Popołudnie w Teatrze Muzycznym Roma. Muzyczna podróż do czasów wielkich hitów, elegancji i klasy. Spodziewamy się wspaniałych głosów!</p>
+                    <a href="https://maps.google.com/?cid=14208882170494235667&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="map-link">Zobacz na mapie (Teatr Roma, Nowogrodzka 49)</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="time">18:00</div>
+                <div class="card-content">
+                    <h3>Powrót do hotelu</h3>
+                    <p>Przygotowania do wielkiej kolacji urodzinowej!</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="time">20:00</div>
+                <div class="card-content">
+                    <h3>Kolacja: Amar Bairut</h3>
+                    <p>Kulminacyjna kolacja urodzinowa w sercu Libanu! Stół pełen aromatycznych *meze* i orientalnej gościnności. Idealne miejsce na celebrację!</p>
+                    <a href="https://maps.google.com/?cid=11523077696726619527&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="map-link">Zobacz na mapie (Fabryka Norblina, Żelazna 51/53)</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="time">22:30</div>
+                <div class="card-content">
+                    <h3>Drink w Fabryce Norblina</h3>
+                    <p>MOXO lub Donkey Shoe. Topowe miejsce na koktajle w stylu światowym. Kreatywne, kobiece drinki i instagramowy klimat na zakończenie wieczoru.</p>
+                    <a href="https://maps.google.com/?cid=2952660045139527738&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="map-link">Zobacz na mapie (Fabryka Norblina, Żelazna 51/53)</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="day-column">
+            <h2>Dzień 3: Niedziela</h2>
+
+            <div class="card">
+                <div class="time">09:00</div>
+                <div class="card-content">
+                    <h3>Śniadanie</h3>
+                    <p>Ostatnie śniadanie w Tiffi Old Town. Chwila na kawę i podsumowanie weekendu.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="time">10:30</div>
+                <div class="card-content">
+                    <h3>Check-out</h3>
+                    <p>Żegnamy hotel, ale nie Warszawę!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="time">11:00</div>
+                <div class="card-content">
+                    <h3>Zamek Królewski: Wystawa</h3>
+                    <p>Wystawa „Niech nas widzą”. Interdyscyplinarna opowieść o historii ubioru i tożsamości, ponad 250 dzieł z Europy. Kultura na koniec wyjazdu!</p>
+                    <a href="https://maps.google.com/?cid=2313057209867159998&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="map-link">Zobacz na mapie (plac Zamkowy 4)</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="time">13:00</div>
+                <div class="card-content">
+                    <h3>Ostatni lunch: Dzień i Noc</h3>
+                    <p>Hala Mirowska. Lokal „na pożegnanie”. Kuchnia polska i włoska w luźnym stylu, dobre porcje i szybka obsługa przed powrotem.</p>
+                    <a href="https://maps.google.com/?cid=12758137446963365033&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="map-link">Zobacz na mapie (Hala Mirowska, plac Mirowski 1)</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="time">14:00</div>
+                <div class="card-content">
+                    <h3>Wyjazd z Warszawy</h3>
+                    <p>Koniec weekendu. Do zobaczenia następnym razem!</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
